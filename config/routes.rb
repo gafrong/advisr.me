@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'pages/about' => 'pages#about'
   get 'pages/faq' => 'pages#faq'
-  
+
   resources :categories
   resources :questions
-  
+  resources :answers
+
 end

@@ -18,12 +18,16 @@ class QuestionsController < ApplicationController
     @question.category_id = params[:question][:category_id]
    
     if @question.save
+
       redirect_to questions_path
     else
       render :new
     end
   end
 
-  
+  def show
+    @question = Question.find(params[:id])
+    @answer = Answer.new
+  end
 
 end

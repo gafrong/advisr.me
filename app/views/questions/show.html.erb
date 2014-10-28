@@ -1,3 +1,20 @@
-<h1>Question</h1>
+<h1>Problem</h1>
 
-<%= @question %>
+<!-- Shows the specific question -->
+<h3><%= @question.content %></h3>
+
+<!-- Form to answer -->
+<%= form_for @answer do |f| %>  
+  <p>
+    <%= f.label :advise %>
+    <%= f.text_area :advise %>  
+    <%#= f.text_field :question_id, :value => 1  %>
+  </p>
+  <%= f.hidden_field :question_id, :value => @question.id %>
+  <button>Go</button>
+<% end %>
+
+<!-- Iterates all the answers to the question-->
+<% @question.answers.each do |answer| %>
+  <p><%= answer.advise %></p>
+<% end %>
