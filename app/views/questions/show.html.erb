@@ -1,6 +1,5 @@
 <h1>Problem</h1>
 
-<!-- Shows the specific question -->
 <h3><%= @question.content %></h3>
 
 <!-- Form to answer -->
@@ -8,8 +7,8 @@
   <p>
     <%= f.label :advise %>
     <%= f.text_area :advise %>  
-    <%#= f.text_field :question_id, :value => 1  %>
   </p>
+  
   <%= f.hidden_field :question_id, :value => @question.id %>
   <button>Go</button>
 <% end %>

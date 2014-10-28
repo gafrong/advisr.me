@@ -18,7 +18,6 @@ class QuestionsController < ApplicationController
     @question.category_id = params[:question][:category_id]
    
     if @question.save
-
       redirect_to questions_path
     else
       render :new
@@ -29,5 +28,9 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answer = Answer.new
   end
+
+  # def question_params
+  #   params.require(:question).permit(:content, :category_id, :current_user.id)
+  # end
 
 end

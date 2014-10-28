@@ -1,7 +1,7 @@
 <h1>Categories</h1>
 
   <% @categories.each do |category| %>
-   <p><%= category.name %></p>
+   <%= link_to category.name, category %>
   <% end %>
 
 <%= link_to 'new category', new_category_path  %>
