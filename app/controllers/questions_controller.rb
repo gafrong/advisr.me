@@ -3,7 +3,11 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @questions = Question.all
+    if !params[:search].present?
+      @questions = Question.all
+    else
+      @questions = Question.where("content ilike ?", "%#{params[:search]}%")
+    end
   end
 
   def new
