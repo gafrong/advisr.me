@@ -14,4 +14,5 @@ Category.create name: "Family"
 Category.create name: "Friends"
 Category.create name: "Work"
 Category.create name: "Pets"
+Category.create name: "Others"
 

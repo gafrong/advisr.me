@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
     else
       @questions = Question.where("content ilike ?", "%#{params[:search]}%")
     end
+    @categories = Category.all
   end
 
   def new

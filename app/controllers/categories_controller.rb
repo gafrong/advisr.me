@@ -4,10 +4,16 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @questions = Question.all
   end
 
   def new
     @category = Category.new
+  end
+
+  def show
+    @categories = Category.all
+    @questions = Question.where(category_id: params[:id])
   end
 
   def create
