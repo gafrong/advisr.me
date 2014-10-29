@@ -2,18 +2,44 @@
 
 <h3><%= @question.content %></h3>
 
+
 <!-- Form to answer -->
 <%= form_for @answer do |f| %>  
   <p>
-    <%= f.label :advise %>
+    <%= f.label :answer %>
     <%= f.text_area :advise %>  
   </p>
   
   <%= f.hidden_field :question_id, :value => @question.id %>
-  <button>Go</button>
+  <button>answer</button>
 <% end %>
 
 <!-- Iterates all the answers to the question-->
 <% @question.answers.each do |answer| %>
   <p><%= answer.advise %></p>
+
+  <!-- Form to comments -->
+  <%= form_for Comment.new do |f| %>  
+    <p>
+      <%= f.label :comment %>
+      <%= f.text_area :feed %>  
+    </p>
+    
+    <%= f.hidden_field :answer_id, :value => answer.id %>
+
+    <button>comment</button>
+  <% end %>
+
+  <% answer.comments.each do |comment| %>
+    <p><%= comment.feed %></p>
+  <% end %>
 <% end %>
+
+ 
+
+
+<!--  <a href="http://twitter.com/share" class="twitter-share-button" data-url="google.com" data-text="this is the custom text." data-count="horizontal" data-via="MyTwitterAccountUsername">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> -->
+
+
+<%= link_to "back", questions_path  %>
+
