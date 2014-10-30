@@ -6,5 +6,8 @@
 <div class="question_return">
   <% @questions.each do |question| %>
     <p><%= link_to question.content, question_path(question.id) %></p>
+    <% @users.where(id: question.user_id).each do |user| %>
+      <%= user.username %>
+    <% end %>
   <% end %>  
 </div>

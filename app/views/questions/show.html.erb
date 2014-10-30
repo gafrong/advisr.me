@@ -14,13 +14,13 @@
         <%= answer.advise %>
       </div>
       <div class="star-rating" data-score="<%= @avg_rating.to_f %>"> </div>
-      <p><%= @comments.where(answer_id: answer.id).length %> reviews</p>
+      <p>Total <%= @comments.where(answer_id: answer.id).length %> comments to this answer</p>
   
   
         <!-- Form to comments -->
           <%= form_for Comment.new do |f| %>  
             <div class="commentblock">
-              <div id="star-rating"></div>
+              <div class="starratings"></div>
                 <%= f.text_field :feed, placeholder: "rate & comment" %>  
                 <%= f.hidden_field :answer_id, :value => answer.id %>
                 <button class="btn btn-sm btn-default">comment</button>
@@ -65,7 +65,7 @@ Rails.env.production? -->
     }
   });
 
-  $('#star-rating').raty({
+  $('.starratings').raty({
     path: 'https://s3-ap-southeast-2.amazonaws.com/advisr/stars',
     scoreName: 'comment[rating]'
   });

@@ -12,8 +12,10 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @users = User.all
     @categories = Category.all
     @questions = Question.where(category_id: params[:id])
+    # @user = User.where(id: question.user_id)
   end
 
   def create

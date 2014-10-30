@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @user = User.all
     if !params[:search].present?
       @questions = Question.all
     else
@@ -17,6 +18,7 @@ class QuestionsController < ApplicationController
   end
   
   def show
+    @user = User.all
     @question = Question.find(params[:id])
     @answer = Answer.new
     @answers = Answer.where(question_id: @question.id).order("created_at DESC")
