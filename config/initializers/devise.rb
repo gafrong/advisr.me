@@ -1,3 +1,20 @@
+class RedirectDevise < Devise::FailureApp
+    def redirect_url
+      #return super unless [:worker, :employer, :user].include?(scope) #make it specific to a scope
+       # new_user_session_url(:subdomain => 'secure')
+       '/about'
+    end
+
+    # You need to override respond to eliminate recall
+    def respond
+      if http_auth?
+        http_auth
+      else
+        redirect 
+      end
+    end
+end
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -256,4 +273,8 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  config.warden do |manager|
+    manager.failure_app = RedirectDevise
+  end
 end

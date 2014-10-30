@@ -6,6 +6,25 @@ li {
   list-style: none;
   display: inline-block;
 }
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.center{
+  text-align: center;
+}
 .logo {
   display: inline-block;
+}
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+.search {
+  margin-top: 1.7em;
+}
+.navbar-brand {
+  margin-top: -0.7em;
 }

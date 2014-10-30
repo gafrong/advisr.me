@@ -27,7 +27,7 @@
 <!--   Need to style this with bootstrap using table class... -->
   <table class="table">
     <tbody>
-      <% answer.comments.each do |comment| %>
+      <% answer.comments.order("rating DESC").each do |comment| %>     <!-- sorting inside a loop -->
         <tr>
           <td>
             <div class="star-rating" data-score= <%= comment.rating %> > </div>

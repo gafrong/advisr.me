@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  
-  devise_for :users
+
   root 'questions#new'
+
+  devise_for :users
+
   get 'pages/about' => 'pages#about'
   get 'pages/faq' => 'pages#faq'
+  get '/about' => 'pages#about'
+
 
   resources :categories
   resources :questions

@@ -14,7 +14,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'rails_12factor'
-
+gem 'bootstrap-sass', '~> 3.3.0'
 
 group :development do 
   gem 'spring'
@@ -23,3 +23,4 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
 end
+

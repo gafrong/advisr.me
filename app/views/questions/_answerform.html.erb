@@ -2,9 +2,9 @@
 
   <p>
     <%= f.label :answer %>
-    <%= f.text_area :advise %>  
+    <%= f.text_area :advise, class: "form-control" %>  
   </p>
   
   <%= f.hidden_field :question_id, :value => @question.id %>
-  <button>answer</button>
+  <button class="btn btn-primary">answer</button>
 <% end %>
