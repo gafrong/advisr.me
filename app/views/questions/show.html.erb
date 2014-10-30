@@ -2,42 +2,45 @@
 <h2><%= @question.content %></h2>
 
 <!-- Form to answer -->
-<%= form_for @answer do |f| %>  
-  <p>
-    <%= f.label :answer %>
-    <%= f.text_area :advise %>  
-  </p>
-  
-  <%= f.hidden_field :question_id, :value => @question.id %>
-  <button>answer</button>
-<% end %>
+<%= render 'questions/answerform' %>
 
 <!-- Iterates all the answers to the question-->
-<% @question.answers.each do |answer| %>
+<% @answers.each do |answer| %>
+  <div class="star-rating" data-score="<%= @avg_rating.to_f %>"> </div>
+  <p><%= "#{@comments.length} comments" %></p>
   <p><%= answer.advise %></p>
 
+
   <!-- Form to comments -->
-  <%= form_for Comment.new do |f| %>  
+    <%= form_for Comment.new do |f| %>  
+    <div id="star-rating"></div>
     <p>
       <%= f.label :comment %>
       <%= f.text_area :feed %>  
     </p>
     
     <%= f.hidden_field :answer_id, :value => answer.id %>
-
+ 
     <button>comment</button>
   <% end %>
 
-  <% answer.comments.each do |comment| %>
-    <p><%= comment.feed %></p>
-  <% end %>
+<!--   Need to style this with bootstrap using table class... -->
+  <table class="table">
+    <tbody>
+      <% answer.comments.each do |comment| %>
+        <tr>
+          <td>
+            <div class="star-rating" data-score= <%= comment.rating %> > </div>
+            <p><%= h(comment.feed).gsub(/\n/, '<br/>').html_safe %></p>    <!-- replaces any new line characters and forms to proper html file -->
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 <% end %>
 
  
-
-
-<!--  <a href="http://twitter.com/share" class="twitter-share-button" data-url="google.com" data-text="this is the custom text." data-count="horizontal" data-via="MyTwitterAccountUsername">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> -->
-
 
 <%= link_to "back", questions_path  %>
 
@@ -52,7 +55,20 @@
 Rails.env.production? -->
 
 
+<script>
+  $('.star-rating').raty({
+    path: 'https://s3-ap-southeast-2.amazonaws.com/advisr/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
 
+  $('#star-rating').raty({
+    path: 'https://s3-ap-southeast-2.amazonaws.com/advisr/stars',
+    scoreName: 'comment[rating]'
+  });
+</script>
 
 
 

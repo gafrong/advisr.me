@@ -16,7 +16,6 @@ class AnswersController < ApplicationController
     @answer.question_id = params[:answer][:question_id]
 
     if @answer.save
-
       redirect_to question_path(@answer.question_id)
     else
       render :new
@@ -25,7 +24,8 @@ class AnswersController < ApplicationController
 
   def show    
     @answer = Answer.find(params[:id])
-    #@comment = Comment.new
+    @comments = Comment.all
   end
 
 end
+

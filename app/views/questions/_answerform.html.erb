@@ -1,0 +1,10 @@
+<%= form_for @answer do |f| %>  
+
+  <p>
+    <%= f.label :answer %>
+    <%= f.text_area :advise %>  
+  </p>
+  
+  <%= f.hidden_field :question_id, :value => @question.id %>
+  <button>answer</button>
+<% end %>

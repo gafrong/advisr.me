@@ -15,6 +15,19 @@ class QuestionsController < ApplicationController
     @categories = Category.all
     @question = Question.new
   end
+  
+  def show
+    @question = Question.find(params[:id])
+    @answer = Answer.new
+    @answers = Answer.where(question_id: @question.id).order("created_at DESC")
+    @comments = @question.comments.order("created_at DESC")
+
+    if @question.comments.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @question.comments.average(:rating).round(2)
+    end
+  end
 
   def create
     @question = Question.new
@@ -29,14 +42,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def show
-    @question = Question.find(params[:id])
-    @answer = Answer.new
 
-  end
-
-  # def question_params
-  #   params.require(:question).permit(:content, :category_id, :current_user.id)
-  # end
 
 end
+
