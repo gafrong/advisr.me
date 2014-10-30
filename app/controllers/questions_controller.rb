@@ -5,11 +5,11 @@ class QuestionsController < ApplicationController
   def index
     @user = User.all
     if !params[:search].present?
-      @questions = Question.all
+      @questions = Question.all.order("created_at DESC")
     else
       @questions = Question.where("content ilike ?", "%#{params[:search]}%")
     end
-    @categories = Category.all
+    @categories = Category.all.order("created_at DESC")
   end
 
   def new

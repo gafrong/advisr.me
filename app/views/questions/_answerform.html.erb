@@ -1,7 +1,7 @@
 <%= form_for @answer do |f| %>  
 
   <p>
-    <%= f.text_area :advise, class: "form-control", placeholder: "Submit your advice in here.." %>  
+    <%= f.text_area :advise, class: "form-control", placeholder: "Submit your advice in here. (be nice)" %>  
   </p>
   
   <%= f.hidden_field :question_id, :value => @question.id %>

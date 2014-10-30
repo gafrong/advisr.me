@@ -155,5 +155,8 @@ body {
   color: #fff;
  /* background-color: rgba(1,1,1,0.5);*/
   padding: 0.1em;
-  margin-top: 9em;
+  margin-top: 2em;
+}
+.login {
+  margin-top: 2em;
 }

@@ -23,7 +23,7 @@ class AnswersController < ApplicationController
   end
 
   def show    
-    @answer = Answer.find(params[:id])
+    @answer = Answer.find(params[:id]).order("created_at DESC")
     @comments = Comment.all
   end
 
