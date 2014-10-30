@@ -87,6 +87,15 @@ body {
 }
 .question_return {
   margin-top: 2em;
+
+}
+.username {
+  display: inline-block;
+  font-size: 1.2em;
+  color: #999;
+}
+.question_content {
+  display: inline-block;
 }
 #question_category_id {
   background-color: #fff;

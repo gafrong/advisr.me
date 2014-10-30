@@ -7,9 +7,10 @@
 
   <div class="question_return">
     <% @questions.each do |question| %>
-      <p><% User.where(id: question.user_id).each do |user| %>
-        <h4><%= user.username %></h4>
+      <% User.where(id: question.user_id).each do |user| %>
+        <div class="username"><%= user.username %>: </div>
       <% end %>
-      <%= link_to question.content, question_path(question.id) %></p>
+      <div class="question_content"><%= link_to question.content, question_path(question.id) %></div>
+      <br>
     <% end %>
   </div>
