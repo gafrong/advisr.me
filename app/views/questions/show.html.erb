@@ -1,48 +1,49 @@
-<h4>My issue is: </h4>
+
 <h2><%= @question.content %></h2>
-
-<!-- Form to answer -->
 <%= render 'questions/answerform' %>
+<br>
 
-<!-- Iterates all the answers to the question-->
-<% @answers.each do |answer| %>
-  <div class="star-rating" data-score="<%= @avg_rating.to_f %>"> </div>
-  <p><%= "#{@comments.length} comments" %></p>
-  <p><%= answer.advise %></p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://advisrme.herokuapp.com/questions/<%= @question.id %>" data-count="none" data-via="advisr">Tweet</a>
+
+<%= link_to "back", questions_path, class: "btn btn-xs btn-default backlink"  %>
+
+    <!-- Iterates all the answers to the question-->
+  <div class="answerloop">
+    <% @answers.each do |answer| %>
+      <div class="advise">
+        <%= answer.advise %>
+      </div>
+      <div class="star-rating" data-score="<%= @avg_rating.to_f %>"> </div>
+      <p><%= @comments.where(answer_id: answer.id).length %> reviews</p>
+  
+  
+        <!-- Form to comments -->
+          <%= form_for Comment.new do |f| %>  
+            <div class="commentblock">
+              <div id="star-rating"></div>
+                <%= f.text_field :feed, placeholder: "rate & comment" %>  
+                <%= f.hidden_field :answer_id, :value => answer.id %>
+                <button class="btn btn-sm btn-default">comment</button>
+            </div> 
+            
+          <% end %>
 
 
-  <!-- Form to comments -->
-    <%= form_for Comment.new do |f| %>  
-    <div id="star-rating"></div>
-    <p>
-      <%= f.label :comment %>
-      <%= f.text_area :feed %>  
-    </p>
-    
-    <%= f.hidden_field :answer_id, :value => answer.id %>
+
+        <!--   Need to style this with bootstrap using table class... -->
+            <div class="comment_separation">
+              <% answer.comments.order("rating DESC").each do |comment| %>     <!-- sorting inside a loop -->                
+                   <!--  <div class="star-rating" data-score="<%#= comment.rating %>" > </div> -->
+                    <p><%= h(comment.feed).gsub(/\n/, '<br/>').html_safe %></p>    <!-- replaces any new line characters and forms to proper html file -->
+              <% end %>
+            </div>
+<br>
+    <% end %>
+  </div>
+       
  
-    <button>comment</button>
-  <% end %>
+  
 
-<!--   Need to style this with bootstrap using table class... -->
-  <table class="table">
-    <tbody>
-      <% answer.comments.order("rating DESC").each do |comment| %>     <!-- sorting inside a loop -->
-        <tr>
-          <td>
-            <div class="star-rating" data-score= <%= comment.rating %> > </div>
-            <p><%= h(comment.feed).gsub(/\n/, '<br/>').html_safe %></p>    <!-- replaces any new line characters and forms to proper html file -->
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-<% end %>
-
- 
-
-<%= link_to "back", questions_path  %>
 
 
 <!-- Twitter API-->
@@ -69,6 +70,8 @@ Rails.env.production? -->
     scoreName: 'comment[rating]'
   });
 </script>
+
+
 
 
 

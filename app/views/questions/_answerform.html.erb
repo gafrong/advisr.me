@@ -1,10 +1,12 @@
 <%= form_for @answer do |f| %>  
 
   <p>
-    <%= f.label :answer %>
-    <%= f.text_area :advise, class: "form-control" %>  
+    <%= f.text_area :advise, class: "form-control", placeholder: "Submit your advice in here.." %>  
   </p>
   
   <%= f.hidden_field :question_id, :value => @question.id %>
-  <button class="btn btn-primary">answer</button>
+  <button class="btn btn-primary btn-lg">advise</button>
 <% end %>
+
+
+  

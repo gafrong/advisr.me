@@ -14,6 +14,7 @@ li {
 }
 .center{
   text-align: center;
+  margin:0 auto;
 }
 .logo {
   display: inline-block;
@@ -27,4 +28,123 @@ li {
 }
 .navbar-brand {
   margin-top: -0.7em;
+}
+.navbar-inverse {
+  background-color: rgba(1,1,1,0.8);
+  border-color: none;
+}
+#ask {
+  margin-top: 1.3em;
+}
+#category {
+  margin-bottom: 1em;
+  font-size: 1.1em;
+}
+h1 {
+  margin: 2em 0;
+}
+h2 {
+  color: #fff;
+  margin-top: -1em;
+  margin-bottom: 2em;
+}
+h4 {
+  display: inline-block;
+  padding: 0 1em;
+}
+a {
+  color: #fff;;
+}
+a:hover {
+  color: #5093B8;
+  text-decoration: none;
+}
+span {
+  font-size: 1.2em;
+}
+body {
+  background-color: #f2f1ef;
+  color: #e8eaea;
+  font-size: 1.5em;
+/*  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRddNFwvhWzwMJNkpDj7fR8ARxHyQsxFaqLBsQxl34flLxEN-xY);
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed;*/
+}
+/*.btn-primary {
+  background-color: #25aae1;
+}*/
+
+.category_heading {
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #333;
+  border-radius: 7px;
+  line-height: 2em;
+}
+.question_return {
+  margin-top: 2em;
+}
+#question_category_id {
+  background-color: #fff;
+  color: #777;
+  height: 2em;
+}
+#comment_feed {
+  color: #000;
+}
+.commentblock {
+  display: inline-block;
+}
+.advise {
+  /*color: rgba(0.5,0.5,0.5,0.1);*/
+  font-size: 1.4em;
+  padding-top: 2em;
+}
+table {
+/*  background-color: #999;*/
+  font-size: 0.8em;
+  color: #dedfe0;
+}
+.comment_separation {
+  color: #777;
+ /* background-color: rgba(1,1,1,0.2);*/
+  margin: 2em 0;
+  padding-top: 1em;
+  padding-bottom: 3em;
+}
+.answerloop {
+  background-color: rgba(1,1,1,0.3);
+  margin-top: 1em;
+  
+}
+.backlink {
+  margin-bottom: 1em;
+}
+body {
+
+  width: 100%;
+  height: 100%;
+  background-image: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG);
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed;
+
+}
+.back {
+  min-height: 600px;
+  background-color: rgba(1,1,1,0.5);
+  padding: 2em;
+}
+.landing_title {
+  color: #fff;
+ /* background-color: rgba(1,1,1,0.5);*/
+  padding: 0.1em;
+  margin-top: 9em;
 }
