@@ -14,25 +14,25 @@
         <%= answer.advise %>
       </div>
       <div class="star-rating" data-score="<%= answer.comments.present? ? answer.comments.average(:rating).round(2).to_f : 0 %>"> </div> <!-- FIX THIS -->
-      <div class="star-comment">(Total <%= @comments.where(answer_id: answer.id).length %> comments to this answer)</div>
+      <div class="star-comment">(There are <%= @comments.where(answer_id: answer.id).length %> comments to this answer)</div>
   
   
         <!-- Form to comments -->
         <div class="commentform">
           <%= form_for Comment.new do |f| %>  
             <div class="commentblock">
-              <span>Rate this answer: </span><div class="starvote"></div>
+              <span>select stars to rate the answer: </span><div class="starvote"></div>
                 <%= f.text_field :feed, placeholder: "rate & comment" %>  
                 <%= f.hidden_field :answer_id, :value => answer.id %>
                 <button class="btn btn-sm btn-default">comment</button>
             </div>             
           <% end %>
         </div>
-        <!--   Need to style this with bootstrap using table class... -->
+      
             <div class="comment_separation">
               <% answer.comments.order("rating DESC").each do |comment| %>     <!-- sorting inside a loop -->                
-                   <!--  <div class="star-rating" data-score="<%#= comment.rating %>" > </div> -->
-                    <p><%= h(comment.feed).gsub(/\n/, '<br/>').html_safe %></p>    <!-- replaces any new line characters and forms to proper html file -->
+                <p><%=  @user.find(comment.user_id).username %>: 
+                <%= h(comment.feed).gsub(/\n/, '<br/>').html_safe %></p>    <!-- replaces any new line characters and forms to proper html file -->
               <% end %>
             </div>
           <br>

@@ -107,6 +107,8 @@ body {
 }
 .commentblock {
   display: inline-block;
+  color: orange;
+  font-size: 0.9em;
 }
 .advise {
   /*color: rgba(0.5,0.5,0.5,0.1);*/
