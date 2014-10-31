@@ -74,9 +74,13 @@ body {
   background-repeat: no-repeat !important;
   background-attachment: fixed;*/
 }
-/*.btn-primary {
-  background-color: #25aae1;
-}*/
+footer {
+  background-color: rgba(1,1,1,0.8);
+  margin-top: 12em;
+  padding: 2em;
+  min-height: 10em;
+  text-align: center;
+}
 
 .category_heading {
   padding: 1em;
@@ -181,4 +185,14 @@ body {
 .answer_user {
   font-size: 0.8em;
   color: #999;
+}
+.form-control {
+  background-color: rgba(1,1,1,0.8);
+  color: #fff;
+  border-color: #333;
+}
+#question_category_id {
+  background-color: #333;
+  border-color: none;
+  color: #fff;
 }
