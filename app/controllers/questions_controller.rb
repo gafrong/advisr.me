@@ -29,6 +29,12 @@ class QuestionsController < ApplicationController
     else
       @avg_rating = @question.comments.average(:rating).round(2)    # FIX THIS (show.html.erb  under <div class="star-rating" data-score="<%= answer.comments.average(:rating).round(2).to_f %>"> </div> works!)
     end
+
+    # if @answer.comments.blank?
+    #   @avg_rating = 0
+    # else
+    #   @avg_rating = @answer.comments.average(:rating).round(2).to_f 
+    # end
   end
 
   def create
