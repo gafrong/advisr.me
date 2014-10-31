@@ -11,7 +11,11 @@
   <div class="answerloop">
     <% @answers.each do |answer| %>
       <div class="advise">
+        <div class="answer_user"> 
+          <%= User.find(answer.user_id).username %> says:
+        </div>   
         <%= answer.advise %>
+
       </div>
       <div class="star-rating" data-score="<%= answer.comments.present? ? answer.comments.average(:rating).round(2).to_f : 0 %>"> </div> <!-- FIX THIS -->
       <div class="star-comment">(There are <%= @comments.where(answer_id: answer.id).length %> comments to this answer)</div>
