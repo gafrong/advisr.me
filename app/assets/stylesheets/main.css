@@ -190,9 +190,10 @@ body {
   background-color: rgba(1,1,1,0.8);
   color: #fff;
   border-color: #333;
+  border-radius: 5px;
 }
 #question_category_id {
-  background-color: #333;
-  border-color: none;
+  background-color: #181818;
+  border-color: #222;
   color: #fff;
 }
