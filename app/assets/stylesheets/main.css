@@ -183,9 +183,9 @@ body {
 }
 .commentform {
   background: rgba(66,180,230, 0.3);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 1em;
-  margin-bottom: -1.5em;
+  margin: 0 9em -1.5em 9em;
 }
 .answer_user {
   font-size: 0.8em;
