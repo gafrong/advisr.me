@@ -26,9 +26,9 @@
           <%= form_for Comment.new do |f| %>  
             <div class="commentblock">
               <span>select stars to rate the answer: </span><div class="starvote"></div>
-                <%= f.text_field :feed, placeholder: "rate & comment" %>  
+                <%= f.text_field :feed, placeholder: "comment here.." %>  
                 <%= f.hidden_field :answer_id, :value => answer.id %>
-                <button class="btn btn-sm btn-default">comment</button>
+                <button class="btn btn-sm btn-default">Rate & Comment</button>
             </div>             
           <% end %>
         </div>
