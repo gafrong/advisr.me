@@ -4,15 +4,15 @@ body {
   color                  : #fff;
   width                  : 100%;
   height                 : 100%;
-  background-image       : url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG);
+/*  background-image       : url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG);*/
   -moz-background-size   : cover;
   -webkit-background-size: cover;
   background-size        : cover;
   background-position    : top center !important;
   background-repeat      : no-repeat !important;
   background-attachment  : fixed;
-
 }
+
 span {
   font-size: 1.2em;
 }
@@ -103,7 +103,7 @@ table {
 .username {
   display  : inline-block;
   font-size: 1.2em;
-  color    : #999;
+  color    : #444;
 }
 .question_content {
   display: inline-block;
@@ -133,7 +133,7 @@ table {
   padding-bottom: 3em;
 }
 .answerloop {
-  background-color: rgba(0.5,0.5,0.5,0.7);
+  background-color: #333;
   margin-top: 1em;
   
 }
@@ -142,9 +142,10 @@ table {
 }
 .back {
   min-height      : 600px;
-  background-color: rgba(1,1,1,0.5);
+  background-color: #999;
   padding         : 2em;
   border-radius   : 5px;
+  margin-top: 2em;
 }
 .landing_title {
   color: #fff;
