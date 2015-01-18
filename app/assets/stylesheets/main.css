@@ -121,13 +121,13 @@ ul li a {
 }
 .commentblock {
   display  : inline-block;
-  color    : orange;
+  color    : #fff;
   font-size: 0.9em;
 }
 .advise {
   font-size  : 1.3em;
   padding-top: 2em;
-  color      : #fff;
+  color      : orange;
 }
 .comment_separation {
   color         : #999;
