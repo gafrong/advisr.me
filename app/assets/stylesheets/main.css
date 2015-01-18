@@ -89,13 +89,15 @@ table {
   font-size: 0.8em;
   color    : #dedfe0;
 }
-
+ul li a {
+  text-align: right;
+}
 .category_heading {
-  padding         : 1em;
+  padding         : 0.7em;
   margin-bottom   : 2em;
   background-color: #333;
   border-radius   : 7px;
-  line-height     : 2em;
+  line-height     : 3em;
 }
 .question_return {
   margin-top: 2em;
