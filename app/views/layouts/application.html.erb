@@ -25,16 +25,13 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        
-        <!-- <li><a href="/">Simple solutions to your problems.</a></li> -->
-      </ul>
+  
 
       <div class="navbar-form navbar-right">
         <%= form_tag questions_path, :method => 'get' do %>
           <div class="form-group">
             <%= text_field_tag :search, params[:search], class: "form-control input-sm", placeholder: "enter a keyword" %>
-            <button type="submit" class="btn btn-sm btn-default"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAGpQAABqUBF5mX3QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVEiJ5dXPK8RBGMfx12OJg9qyB1e5OTso2fgHXNzd+AP4HxxdXRwcnZwU/gfJEQc5ysWPopQYhx212J3NF6U8NU3NZ+bznpnnmSZSSn4z+n7V/f8AIqIREZMRMfxlQkqpa8MCzpFye8Expkvr3nkUzDey6T4WMYNlHOEZq5UBeecJKx20fmziCVNVAefYK5xuCKfY7QX4lOSIaGAc24W8PWIHzYgoFkoncSz3F6WFWa+j9lXAmdb9T/QATOAmpfRUnNXljo9xiFoXfQSX2Kqa5GmtUtzAYAfzg3zK+e+8g1WtUjzBGpawnnf+9vAeMFcJkCFT2MVtNrzGFuaz+RtkthKgDdSHgQ9jc22QezQrAwrg2WyecIf6jwIypJnNHzH6UY886VsREXUMpZSuPmk/ASjF3/jR/jTgFV6Fc0A1b5HWAAAAAElFTkSuQmCC9074d7fa4ea25564158064dcb681a5c7"/></button>
+            <button type="submit" class="btn btn-sm btn-default" id="seek"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAGpQAABqUBF5mX3QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVEiJ5dXPK8RBGMfx12OJg9qyB1e5OTso2fgHXNzd+AP4HxxdXRwcnZwU/gfJEQc5ysWPopQYhx212J3NF6U8NU3NZ+bznpnnmSZSSn4z+n7V/f8AIqIREZMRMfxlQkqpa8MCzpFye8Expkvr3nkUzDey6T4WMYNlHOEZq5UBeecJKx20fmziCVNVAefYK5xuCKfY7QX4lOSIaGAc24W8PWIHzYgoFkoncSz3F6WFWa+j9lXAmdb9T/QATOAmpfRUnNXljo9xiFoXfQSX2Kqa5GmtUtzAYAfzg3zK+e+8g1WtUjzBGpawnnf+9vAeMFcJkCFT2MVtNrzGFuaz+RtkthKgDdSHgQ9jc22QezQrAwrg2WyecIf6jwIypJnNHzH6UY886VsREXUMpZSuPmk/ASjF3/jR/jTgFV6Fc0A1b5HWAAAAAElFTkSuQmCC9074d7fa4ea25564158064dcb681a5c7"/></button>
           </div>
         <% end %>
       </div>

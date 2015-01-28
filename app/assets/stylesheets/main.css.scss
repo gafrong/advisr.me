@@ -188,7 +188,10 @@ ul li a {
   color           : #fff;
   border-color    : #333;
   border-radius   : 5px;
+  max-width       : 70%;
+  display         : inline-block;
 }
+
 #question_category_id {
   background-color: #181818;
   border-color    : #222;
@@ -202,4 +205,11 @@ ul li a {
 }
 li #chat a img {
   color: #fff;
+}
+#seek {
+  display: inline-block;
+  text-align: right;
+}
+.form-group {
+  text-align: right;
 }
