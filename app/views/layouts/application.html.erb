@@ -59,10 +59,10 @@
    
   <div class="container">
     <div class="back">
-         
+
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-
+<p id="startchange">
     <%= yield %>
 
     </div>
@@ -71,3 +71,21 @@
 <footer>Copyright 2015</footer>
 </body>
 </html>
+
+<script>
+  $(document).ready(function(){       
+     var scroll_start = 0;
+     var startchange = $('#startchange');
+     var offset = startchange.offset();
+      if (startchange.length){
+     $(document).scroll(function() { 
+        scroll_start = $(this).scrollTop();
+        if(scroll_start > offset.top) {
+            $(".navbar-inverse").css('background-color', '#2c2c2c');
+         } else {
+            $('.navbar-inverse').css('background-color', 'transparent');
+         }
+     });
+      }
+  });
+</script>
