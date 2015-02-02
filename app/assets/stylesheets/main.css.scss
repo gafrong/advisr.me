@@ -157,9 +157,9 @@ ul li a {
 .back {
   min-height      : 600px;
   background-color: #999;
- /* padding         : 2em;*/
+  padding         : 2em;
   border-radius   : 5px;
-  margin-top: 2em;
+  margin-top: 53px;
 }
 .landing_title {
   color: #fff;
@@ -250,7 +250,9 @@ li #chat a img {
   background-color: #8e8e8e;
   padding         : 1.5em 2em;
 }
-
+#break {
+  margin-top: 1em;
+}
 
 /*navbar background change*/
 .navbar-inverse{

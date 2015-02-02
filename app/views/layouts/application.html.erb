@@ -27,7 +27,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     
-
+        <% if user_signed_in? %>
         <div class="navbar-form navbar-right">
           <%= form_tag questions_path, :method => 'get' do %>
             <div class="form-group right">
@@ -36,9 +36,12 @@
             </div>
           <% end %>
         </div>
+        <% end %>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'General Issues', questions_path  %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'General Issues', questions_path  %></li>
+          <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
             <ul class="dropdown-menu right" role="menu">
@@ -56,13 +59,14 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-   
+  
   <div class="container">
+    <p id="startchange">
     <div class="back">
-
+        <br id="break">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-<p id="startchange">
+
     <%= yield %>
 
     </div>
