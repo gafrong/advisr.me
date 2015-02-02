@@ -11,66 +11,63 @@
 </head>
 <body>
 <div class="wrapper">
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/"><img src="https://s3-ap-southeast-2.amazonaws.com/advisr/advisr.png" title="source: imgur.com" /></a>      
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-  
-
-      <div class="navbar-form navbar-right">
-        <%= form_tag questions_path, :method => 'get' do %>
-          <div class="form-group right">
-            <%= text_field_tag :search, params[:search], class: "form-control input-sm", placeholder: "enter a keyword" %>
-            <button type="submit" class="btn btn-sm btn-default" id="seek"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAGpQAABqUBF5mX3QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVEiJ5dXPK8RBGMfx12OJg9qyB1e5OTso2fgHXNzd+AP4HxxdXRwcnZwU/gfJEQc5ysWPopQYhx212J3NF6U8NU3NZ+bznpnnmSZSSn4z+n7V/f8AIqIREZMRMfxlQkqpa8MCzpFye8Expkvr3nkUzDey6T4WMYNlHOEZq5UBeecJKx20fmziCVNVAefYK5xuCKfY7QX4lOSIaGAc24W8PWIHzYgoFkoncSz3F6WFWa+j9lXAmdb9T/QATOAmpfRUnNXljo9xiFoXfQSX2Kqa5GmtUtzAYAfzg3zK+e+8g1WtUjzBGpawnnf+9vAeMFcJkCFT2MVtNrzGFuaz+RtkthKgDdSHgQ9jc22QezQrAwrg2WyecIf6jwIypJnNHzH6UY886VsREXUMpZSuPmk/ASjF3/jR/jTgFV6Fc0A1b5HWAAAAAElFTkSuQmCC9074d7fa4ea25564158064dcb681a5c7"/></button>
-          </div>
-        <% end %>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="https://s3-ap-southeast-2.amazonaws.com/advisr/advisr.png" title="source: imgur.com" /></a>      
       </div>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'General Issues', questions_path  %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
-          <ul class="dropdown-menu right" role="menu">
-            <% if user_signed_in? %>
-              <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-            <% else %>  
-              <li><%= link_to "Login", new_user_session_path %></li>    
-              <li><%= link_to "Sign Up", new_user_registration_path %></li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+
+        <div class="navbar-form navbar-right">
+          <%= form_tag questions_path, :method => 'get' do %>
+            <div class="form-group right">
+              <%= text_field_tag :search, params[:search], class: "form-control input-sm", placeholder: "enter a keyword" %>
+              <button type="submit" class="btn btn-sm btn-default" id="seek"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAGpQAABqUBF5mX3QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVEiJ5dXPK8RBGMfx12OJg9qyB1e5OTso2fgHXNzd+AP4HxxdXRwcnZwU/gfJEQc5ysWPopQYhx212J3NF6U8NU3NZ+bznpnnmSZSSn4z+n7V/f8AIqIREZMRMfxlQkqpa8MCzpFye8Expkvr3nkUzDey6T4WMYNlHOEZq5UBeecJKx20fmziCVNVAefYK5xuCKfY7QX4lOSIaGAc24W8PWIHzYgoFkoncSz3F6WFWa+j9lXAmdb9T/QATOAmpfRUnNXljo9xiFoXfQSX2Kqa5GmtUtzAYAfzg3zK+e+8g1WtUjzBGpawnnf+9vAeMFcJkCFT2MVtNrzGFuaz+RtkthKgDdSHgQ9jc22QezQrAwrg2WyecIf6jwIypJnNHzH6UY886VsREXUMpZSuPmk/ASjF3/jR/jTgFV6Fc0A1b5HWAAAAAElFTkSuQmCC9074d7fa4ea25564158064dcb681a5c7"/></button>
+            </div>
+          <% end %>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'General Issues', questions_path  %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
+            <ul class="dropdown-menu right" role="menu">
+              <% if user_signed_in? %>
+                <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              <% else %>  
+                <li><%= link_to "Login", new_user_session_path %></li>    
+                <li><%= link_to "Sign Up", new_user_registration_path %></li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
    
-    <div class="container">
+  <div class="container">
     <div class="back">
-   
-
-      
+     
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-
 
     <%= yield %>
 
     </div>
   </div>
-</div>
+</div> <!-- ends wrapper -->
 <footer>Copyright 2015</footer>
 </body>
 </html>
