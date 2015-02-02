@@ -1,7 +1,16 @@
-<div class="landing_title">
-  <h1>Relationship problems solved.</h1>
-  <h5>State your problem and seek public advice.</h5>
+<div >
+  
+  <div class="landing_title">
+    <h1>Relationship problems solved.</h1>
+    <h5>State your problem and seek public advice.</h5>
+  </div>  
+
+  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-primary signup" %> 
+  <%= link_to "Login", new_user_session_path, class: "btn btn-lg btn-default login" %>
+
 </div>  
 
-<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-primary" %> <br>
-<p><%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-default login" %></p>
+<script>
+  $('body').addClass('home-page');
+  $('.back').addClass('display-none');
+</script>
