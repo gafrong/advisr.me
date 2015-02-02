@@ -15,3 +15,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$('body').addClass('home-page');
+$('.back').addClass('display-none');
