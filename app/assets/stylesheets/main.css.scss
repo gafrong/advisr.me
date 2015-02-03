@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato);
 body {
   font-size: 1.5em;
-  background-color       : #f2f1ef;
+  background-color       : #393939;
   color                  : #fff;
   width                  : 100%;
   height                 : 100%;
@@ -249,11 +249,14 @@ li #chat a img {
   text-align      : center;
   background-color: #8e8e8e;
   padding         : 1.5em 2em;
+  left: 0;
 }
 #break {
   margin-top: 1em;
 }
-
+.navbar-header button .collapsed {
+  color: orange;
+}
 /*navbar background change*/
 .navbar-inverse{
     background:transparent;
